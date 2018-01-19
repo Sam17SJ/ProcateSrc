@@ -1,0 +1,49 @@
+{% extends "menu.html"%}
+
+{% load crispy_forms_tags %}
+{{titulo}}
+
+ {% block titulo %}INSCRIBIR{% endblock %}
+ {% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+       <div>
+  <div class="col-md-12">
+     <div align="col-md-10 col-sm-offset-2 ">
+<br>
+	<H1 class="title">INSCRIPCION DE NIÑOS</H1>
+<br>	
+	<form method="POST" action="" class="form">
+           <div class="col-md-7">
+		
+		{% csrf_token %}
+                <div class="col-md-9"> Nombre Catequizando:*<br>
+                  <input class="form-control" type="text" name="Nombre" required="true"></div>
+                <div class="col-md-9">Nombre de la Madre:<br>
+                  <input class="form-control" type="text" name="Nombre_madre"></div>
+                <div class="col-md-9">Nombre del Padre:<br>
+                  <input class="form-control" type="text" name="Nombre_padre"></div> 
+                <div class="col-md-9">Email:<br>
+                  <input class="form-control" type="text" name="Email"></div> 
+                <div class="col-md-6">Fecha de Nacimiento:*<br>
+                  <input class="form-control" type="date" name="Fecha_de_nacimiento" required="true"></div>
+                <div class="col-md-9">Lugar de Bautizo:<br>
+                  <input class="form-control" type="text" name="Lugar_de_bautizo"></div> 
+                <div class="col-md-6">Fecha de Bautizo<br>
+                  <input class="form-control" type="date" name="Fecha_de_bautizo"></div>
+                <div class="col-md-9">Fe de Bautizo: {{boletaForm.fe_de_bautizo}}</div> 
+                <div class="col-md-9">Partida de Nacimiento: {{boletaForm.partida_de_nacimiento}}</div>
+                <div class="col-md-9">Grupo al que se inscribe:<br>{{boletaForm.grupo}}</div>
+                <br>
+
+                <div class="col-md-9"><input class='btn btn-primary' type='submit' value='Inscribir' /></div><br>
+                
+          </div>
+	
+	</form>
+     </div>
+   </div>
+        </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

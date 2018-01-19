@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Asistencia{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+<br>
+<div class="col-lg-10">
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th >Nombre Grupo</th>
+			<th ></th>
+		</tr>
+		{% for elemento in grupo %}
+		<tr>
+			<td >{{ elemento.nombre }}</td>
+			<td><a style="height:30px" class="btn btn-primary" href="{% url 'listadoAsistencia' elemento.id_grupo %}">Visualizar</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+<div><div>
+{% endblock %}

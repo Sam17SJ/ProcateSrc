@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Crear Nuevo Grupo{% endblock %}
+{% block contenido %}
+
+
+<br><br><br>
+<div style="position: absolute; left: 100px; width: 200px; height: 120px;"><a class="btn btn-success" href="{% url 'gestioncate' %}">Gestion de Catequizando</a></div><br><br><br>
+<div style="position: absolute; left: 100px; width: 200px; height: 120px;"><a class="btn btn-success" href="{% url 'visualasistencia2' %}">Visualizacion de Asistencias</a></div><br><br><br>
+
+
+{% endblock %}

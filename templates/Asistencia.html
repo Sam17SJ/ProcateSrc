@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Asistencia{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+
+<div id="body">
+<br>
+
+<div class='col-sm-6 col-sm- offset-3'>
+<H1>Asistencia</H1>
+
+<form method="POST" action="">{% csrf_token %}
+	<input class="form-control" type="date" name="fecha" required="true">
+<div align="center">
+
+<table class="table table-striped table-bordered">
+	<caption>Asistencia</caption>
+	<tr>
+		<th>No.</th>
+		<th>Nombre</th>
+		<th>Asistencia</th>
+	</tr>
+	{% for elemento in cate %}
+	<tr><td>{{forloop.counter}}</td>
+	 <td>{{elemento}}</td>
+	<td align="center"><input  type="checkbox" name="asis" value="{{elemento.id_catequizando}}" /> <br /></td>
+	</tr>
+	</tr>
+	{%endfor%}
+</table>
+</div>	
+<input class='btn btn-primary' type='submit' value='Guardar' />
+</form>
+<br>
+</div></div>	
+{% endblock %}

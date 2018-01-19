@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Impresion Boleta Catequistas{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+		<br><br>
+	<div align="center" >
+		<form  class="navbar-search pull-left" method="POST">{% csrf_token %}
+		<input name="buscalo" class="search-query" type="text" placeholder="Buscar" />
+		<button class="btn btn-primary" type="submit">Buscar</i></button>
+		</form>
+	</div>
+	<br><br>
+	<form method="POST" action="">{% csrf_token %}
+		<table class="table table-striped table-bordered">
+		<tr>
+			<th>Nombre Catequizando</th>
+			<th>Grupo</th>
+			<th></th>
+		</tr>
+		{% for elemento in cate %}
+		<tr>
+			<td >{{ elemento.nombre }}</td>
+			<td >{{ elemento.id_grupo }}</td>
+			<td ><a style="height:30px" class="btn btn-danger" href="{% url 'imprimirbol' elemento.id_catequizando %}">Imprimir PDF</a></td>
+		</tr>
+		{% endfor %}
+		</table>
+	</form>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Comunidades{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+<div align="center">
+
+{% csrf_token %}
+
+<div id="body">
+<br><br>
+<H1>Listado de comunidades</H1>
+<div class="col-lg-11">
+<table class="table table-striped table-bordered">
+	<caption>Listado de comunidades </caption>
+	<tr>
+		<th>No.</th>
+		<th>Nombre</th>
+		<th>Editar</th>
+		<th>Eliminar</th>
+	</tr>
+	{%for elemento in comunidades%}
+	<tr><td>{{forloop.counter}}</td>
+	<td><input class="form-control mr-sm-2" type="text" value="{{elemento}}" editable='false' ></td>
+	<td><a class="btn btn-primary" href="{% url 'comunidad_editar' elemento.id_comunidad %}">Editar</a></td>
+	<td><a class="btn btn-danger" href="{% url 'comunidad_delete' elemento.id_comunidad %}">Eliminar</a></td>
+	</tr>
+	{%endfor%}
+</table>
+<br>
+<td><a class="btn btn-primary" href="{% url 'comunidad' %}">Nueva comunidad</a></td>
+</div>
+</div></div>
+<br><br><br><br><br><br><br><br>
+{% endblock %}

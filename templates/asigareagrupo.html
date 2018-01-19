@@ -1,0 +1,29 @@
+{% extends "menu.html"%}
+
+{% load crispy_forms_tags %}
+{{titulo}}
+
+ {% block titulo %}INSCRIBIR{% endblock %}
+ {% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+  <div align="center">
+  <div class="col-md-7">
+     
+
+<br><br><br><br>
+<H1>Asignar Area y Grupo</H1>
+<form method="POST" action="">{% csrf_token %}
+	<div align="center">Nombre del Catequista:</div>
+	<br><br>
+	<div id="nombre" align="center">{{ cate.nombre }}</div>
+
+	<br><br>
+	 {{catequista|crispy}}
+	<input class='btn btn-primary' type='submit' value='Guardar' />
+</form>
+</div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Catequistas{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+
+<div id="body">
+<br>
+<H1>Listado de catequistas</H1>
+<br>
+<div class="col-lg-11">
+<div align="center"><table class="table table-striped table-bordered">
+	<caption>Listado de catequista</caption>
+	<tr>
+		<th>No.</th>
+		<th>Nombre</th>
+		<th>Comunidad</th>
+		<th>Area</th>
+		<th>Grupo</th>
+		<th>Editar</th>
+		<th>Eliminar</th>
+	</tr>
+	{%for elemento in catequistas%}
+	<tr><td>{{forloop.counter}}</td>
+	<td><input class="form-control mr-sm-2" type="text" value="{{elemento}}" editable="false" ></td>
+	<td>{{elemento.id_comunidad}}</td>
+	<td>{{elemento.id_area}}</td>
+	<td>{{elemento.id_grupo}}</td>
+	<td><a class="btn btn-primary" href="#">Editar</a></td>
+	<td><a class="btn btn-danger" href="#">Eliminar</a></td>
+	</tr>
+	</tr>
+	{%endfor%}
+</table>
+</div></div></div>
+{% endblock %}

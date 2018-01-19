@@ -1,0 +1,29 @@
+{% extends "menu.html"%}
+
+{% load crispy_forms_tags %}
+{{titulo}}
+
+ {% block titulo %}INSCRIBIR{% endblock %}
+ {% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+  <div class="col-md-12">
+     <div align="col-md-10 col-sm-offset-2 ">
+<br>
+	<H1 class="title">INSCRICION DE NIÑOS</H1>
+<br>	
+	<form method="POST" action="" class="form">
+           <div class="col-md-7">
+		
+		{% csrf_token %}
+                {{boletaForm|crispy}}
+<input class='btn btn-primary' type='submit' value='Inscribir' />
+                
+          </div>
+	
+	</form>
+     </div>
+   </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

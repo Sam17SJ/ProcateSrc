@@ -1,0 +1,62 @@
+ {% load static %}
+
+<div id="sidebar" >
+<ul>
+    {% if coor.is_Secretaria %}
+		<li><a class="" href="{% url 'buscarCate' %}"><i class="icon-th"></i>Imprimir Boleta</a></li>
+    {% else %}          
+		<li class="has-sub">
+		<a href="javascript:;" class="">
+		<i class="icon-bookmark-empty"></i> Catequizandos
+		<span class="arrow"></span>
+		</a>
+		<ul class="sub">
+		  <li><a class="" href="{% url 'inscribir' %}">Ingresar Catequizando</a></li>
+		  <li><a class="" href="{% url 'listaCatequizando' %}">Ver Listado</a></li>
+		  
+		</ul>
+		</li>
+		{% if coor.is_Admin or coor.is_Coordinador %}
+		<li><a class="" href="{% url 'listgrupo' %}"><i class="icon-th"></i> Grupos</a></li>
+
+		{% if coor.is_Admin %}
+		<li><a class="" href="{% url 'listaComunidad' %}"><i class="icon-th"></i> Gestion de comunidades</a></li>
+
+		{% endif %}
+
+		<li><a class="" href="{% url 'listaArea' %}"><i class="icon-th"></i>Gestion de Areas</a></li>
+		<li class="has-sub">
+		<a href="javascript:;" class="">
+		<i class="icon-bookmark-empty"></i> Gestion de Usuarios
+		<span class="arrow"></span>
+		</a>
+		<ul class="sub">
+		{% if coor.is_Admin %}
+		  <li><a class="" href="{% url 'asignarRol' %}">Asignar Rol</a></li>
+		{% endif %}
+		  <li><a class="" href="{% url 'asignarAreaGrupo' %}">Asignacion de Area y Grupo</a></li>
+		{% if coor.is_Admin %}
+		  <li><a class="" href="{% url 'activarUser' %}">Activacion de Usuarios</a></li>	
+		{% endif %}
+		</ul>
+		</li>
+		{% endif %}
+
+		<li class="has-sub">
+		<a href="javascript:;" class="">
+		<i class="icon-bookmark-empty"></i> Asistencias
+		<span class="arrow"></span>
+		</a>
+		<ul class="sub">
+		  <li><a class="" href="{% url 'asis' %}">Pasar asistencias</a></li>
+		  {% if coor.is_Admin %}
+		  <li><a class="" href="{% url 'listGrupoCat'  %}">Historial</a></li>
+		  {% else %}
+		  <li><a class="" href="{% url 'listadoAsistencia' grupo.id_grupo  %}">Historial</a></li>
+		  {% endif %}
+		</ul>
+		</li>
+		</ul>
+	{% endif%}
+</ul>
+</div>

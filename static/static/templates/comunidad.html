@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Comunidad{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+<br>
+<div class='col-sm-6 col-sm- offset-3'>
+<br><br><br><br>
+<H1>Ingrese la comunidad</H1>
+<form method="POST" action="">{% csrf_token %}
+	 {{comunidad|crispy}}
+	<input class='btn btn-primary' type='submit' value='Guardar' />
+</form>
+</div></div>
+<br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!--Template ingresar grupo (Jairo Hndz)-->
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Crear Nuevo Grupo{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+<br>
+<div class="col-lg-10">
+<h1>Ingreso de Nuevo Grupo</h1>
+<br>
+<form method="POST" action="">{% csrf_token %}
+	<div align="left" style="position: absolute; left: 400px; width: 200px; height: 120px; ">{{ group.as_p }}</div>
+	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br>
+	
+
+	<div align="left" style="position: absolute; left: 400px; width: 500px; height: 120px; ">Comunidad asignada al usuario:</div>
+	<br><br>
+	<div id="comunidad" align="left" style="position: absolute; left: 400px; width: 200px; height: 120px; color: red;">{{ comunidad }}</div>
+	<br><br><br><br>
+	<input class='btn btn-primary' type='submit' value='Ingresar'>
+</form>
+</div></div>
+{% endblock %}

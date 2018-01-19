@@ -1,0 +1,21 @@
+{% extends "menu.html"%}
+
+{% load crispy_forms_tags %}
+{{titulo}}
+
+
+{% include "gestioncate.html"%}
+ {% block titulo %}LOGIN{% endblock %}
+ {% block contenido %}
+<div align="center">
+<br><br><br><br>
+<H1>INICIAR SESION</H1>
+
+<form method="POST" action="">{% csrf_token %}
+	 {{form.as_p}}
+	<input type='submit' value='Login' />
+</form>
+</div>
+<div align="center">   <a href="{% url 'catequistaCrear' %}">Crear cuenta</a></div>
+<div align="center" style="color: red;">{{are}}</div>
+{% endblock %}

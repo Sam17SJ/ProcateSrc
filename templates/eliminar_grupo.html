@@ -1,0 +1,19 @@
+{% extends "menu.html"%}
+
+{% load crispy_forms_tags %}
+{{titulo}}
+
+ {% block titulo %}INSCRIBIR{% endblock %}
+ {% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+  <div class="col-md-12">
+     <div align="col-md-10 col-sm-offset-2 ">
+<form method="POST" action="">{% csrf_token %}
+	<h2>Desea eliminar el Grupo {{ grup.nombre }}</h2>
+		<button class="btm btn-danger" type="submit">Eliminar</button>
+		<a class="btn btn-default" href="{% url 'listgrupo' %}">Cancelar</a>
+</form>
+
+</div></div></div>
+{% endblock %}

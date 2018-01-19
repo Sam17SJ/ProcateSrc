@@ -1,0 +1,11 @@
+<!--Template eliminar grupo (Jairo Hndz)-->
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Crear catequista{% endblock %}
+{% block contenido %}
+<form method="POST" action="">{% csrf_token %}
+	<h2>Desea eliminar el Grupo {{ grup.nombre }}</h2>
+		<button class="btm btn-danger" type="submit">Eliminar</button>
+		<a class="btn btn-default" href="{% url 'listgrupo' %}">Cancelar</a>
+</form>
+{% endblock %}

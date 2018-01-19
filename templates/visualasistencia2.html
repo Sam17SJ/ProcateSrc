@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Crear Nuevo Grupo{% endblock %}
+{% block contenido %}
+
+
+<br><br><br>
+<div style="position: absolute; left: 100px; width: 200px; height: 120px;"><a class="btn btn-success" href="{% url 'asis' %}">Pasar Asistencia</a></div><br><br><br>
+<div style="position: absolute; left: 100px; width: 200px; height: 120px;"><a class="btn btn-success" href="{% url 'listadoAsistencia' grupo.id_grupo %}">Historial de Asistencias</a></div><br><br><br>
+
+{% endblock %}

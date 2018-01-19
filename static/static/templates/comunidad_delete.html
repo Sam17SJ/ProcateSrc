@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Eliminar comunidad{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+<br>
+<div class='col-sm-6 col-sm- offset-3'>
+<br><br><br><br>
+<form method="POST" action="">{% csrf_token %}
+<H2><strong> Desea eliminar la comunidad {{com.nombre}}</strong></H2>
+	
+	<button class="btm btn-danger" type="submit">Eliminar</button>
+	<a class="btn btn-default" href="{% url 'listaComunidad' %}">Cancelar</a>
+</form>
+</div></div>
+<br> 
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block titulo %}Editar{% endblock %}
+{% block contenido %}
+{% include "gestioncate.html"%}
+<div id="body">
+<br>
+
+<div class='col-sm-6 col-sm- offset-3'>
+<H1>Editar el catequizando</H1>
+<br>
+<form method="POST" action="">{% csrf_token %}
+	 {{form1|crispy}}
+	 {{form2|crispy}}
+	<input class='btn btn-primary' type='submit' value='Guardar' />
+</form>
+<br>
+</div></div>
+{% endblock %}

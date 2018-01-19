@@ -1,0 +1,25 @@
+ {% load static %}
+
+<div id="sidebar" >
+<ul>
+            
+	<li class="has-sub">
+	<a href="javascript:;" class="">
+	<i class="icon-bookmark-empty"></i> Catequizandos
+	<span class="arrow"></span>
+	</a>
+	<ul class="sub">
+	  <li><a class="" href="{% url 'inscribir' %}">Ingresar Catequizando</a></li>
+	  <li><a class="" href="{% url 'listaCatequizando' %}">Ver Listado</a></li>
+	  
+	</ul>
+	</li>
+
+	<li><a class="" href="{% url 'listgrupo' %}"><i class="icon-th"></i> Grupos</a></li>
+	<li><a class="" href="{% url 'listaComunidad' %}"><i class="icon-th"></i> Gestion de comunidades</a></li>
+	<li><a class="" href="{% url 'listaArea' %}"><i class="icon-th"></i>Gestion de Areas</a></li>
+	<li><a class="" href="{% url 'activarUser' %}"><i class="icon-th"></i>Activacion de Usuarios</a></li>
+	<li><a class="" href="{% url 'listGrupoCat' %}"><i class="icon-th"></i>Visualizacion de Asistencias</a></li>
+	
+	</ul>
+</div>

@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+{% load crispy_forms_tags %}
+{{titulo}}
+
+ {% block titulo %}LOGIN{% endblock %}
+ {% block contenido %}
+<div align="center">
+<br><br><br><br>
+<H1>INICIAR SESION</H1>
+
+<form method="POST" action="">{% csrf_token %}
+	 {{form.as_p}}
+	<input type='submit' value='Login' />
+</form>
+</div>
+   <a href="{% url 'catequistaCrear' %}">Crear cuanta</a>
+{% endblock %}
